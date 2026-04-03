@@ -17,7 +17,7 @@ export default function App() {
         {/* Title */}
         <div className="text-center space-y-3">
           <img
-            src="/TeenageTicTacToe/public/tlogowhite2.png"
+            src={`${import.meta.env.BASE_URL}tlogowhite2.png`}
             alt="Logo"
             className="h-28 sm:h-32 mx-auto object-contain"
           />
