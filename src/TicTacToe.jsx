@@ -50,7 +50,7 @@ function PalettePicker({ onPick }) {
   const [hovered, setHovered] = useState(null);
   return (
     <div style={{ height:"100vh", width:"100%", background:"#0A0A0F", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", padding:"1.5rem", overflow:"hidden", position:"relative" }}>
-      <div style={{ position:"absolute", inset:0, opacity:0.03, pointerEvents:"none", backgroundImage:"linear-gradient(white 1px,transparent 1px),linear-gradient(90deg,white 1px,transparent 1px)", backgroundSize:"40px 40px" }} />
+
       <div style={{ position:"relative", zIndex:1, width:"100%", maxWidth:480, display:"flex", flexDirection:"column", alignItems:"center", gap:"1.5rem" }}>
         <div style={{ textAlign:"center" }}>
           <h2 style={{ margin:0, fontSize:"clamp(1.4rem,4vw,2rem)", fontWeight:900, letterSpacing:"0.15em", textTransform:"uppercase", background:"linear-gradient(135deg,#F472B6,#A78BFA,#38BDF8)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text" }}>
@@ -176,8 +176,7 @@ export default function TicTacToe({ onBack }) {
 
   return (
     <div style={{ height:"100vh", width:"100%", background:pal.bg, display:"flex", flexDirection:"column", overflow:"hidden", position:"relative" }}>
-      {/* grid bg */}
-      <div style={{ position:"absolute", inset:0, opacity:0.07, pointerEvents:"none", backgroundImage:`linear-gradient(${pal.grid} 1px,transparent 1px),linear-gradient(90deg,${pal.grid} 1px,transparent 1px)`, backgroundSize:"40px 40px" }} />
+
 
       {celebrate && <Confetti pal={pal} />}
 
