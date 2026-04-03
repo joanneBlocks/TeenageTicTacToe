@@ -16,6 +16,11 @@ export default function App() {
 
         {/* Title */}
         <div className="text-center space-y-3">
+          <img
+            src="/TeenageTicTacToe/public/tlogowhite2.png"
+            alt="Logo"
+            className="h-28 sm:h-32 mx-auto object-contain"
+          />
           <h1 className="text-5xl sm:text-6xl font-black tracking-tight text-white">
             Tic Tac <span className="bg-linear-to-r from-pink-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">Toe</span>
           </h1>
@@ -67,6 +72,12 @@ export default function App() {
         </div>
 
         <p className="text-gray-700 text-xs tracking-wider">Tap a card to start playing</p>
+
+        {/* Copyright */}
+        <p className="text-gray-700 text-[10px] tracking-wider text-center">
+          © 2026 Joanne Costo. All Rights Reserved.
+        </p>
+
       </div>
     </div>
   );
