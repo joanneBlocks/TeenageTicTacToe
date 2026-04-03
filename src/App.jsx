@@ -17,10 +17,10 @@ export default function App() {
         {/* Title */}
         <div className="text-center space-y-3">
           <h1 className="text-5xl sm:text-6xl font-black tracking-tight text-white">
-            Tic Tac <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">Toe</span>
+            Tic Tac <span className="bg-linear-to-r from-pink-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">Toe</span>
           </h1>
           <p className="text-gray-500 text-sm tracking-widest uppercase">Choose your game</p>
-          <div className="w-20 h-px bg-gradient-to-r from-pink-500 to-cyan-500 mx-auto" />
+          <div className="w-20 h-px bg-linear-to-r from-pink-500 to-cyan-500 mx-auto" />
         </div>
 
         {/* Mode cards */}
@@ -29,7 +29,7 @@ export default function App() {
           {/* Classic */}
           <button
             onClick={() => setMode("classic")}
-            className="group flex flex-col items-center gap-5 p-8 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-amber-400/50 hover:bg-amber-400/5 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-amber-500/10 text-left"
+            className="group flex flex-col items-center gap-5 p-8 rounded-3xl bg-white/3 border border-white/10 hover:border-amber-400/50 hover:bg-amber-400/5 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-amber-500/10 text-left"
           >
             <div className="text-6xl">♟️</div>
             <div>
@@ -48,7 +48,7 @@ export default function App() {
           {/* Teen */}
           <button
             onClick={() => setMode("teen")}
-            className="group flex flex-col items-center gap-5 p-8 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-pink-400/50 hover:bg-pink-400/5 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-pink-500/10 text-left"
+            className="group flex flex-col items-center gap-5 p-8 rounded-3xl bg-white/3 border border-white/10 hover:border-pink-400/50 hover:bg-pink-400/5 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-pink-500/10 text-left"
           >
             <div className="text-6xl">⚡</div>
             <div>
