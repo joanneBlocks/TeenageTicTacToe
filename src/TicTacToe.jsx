@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 
-// Palette definitions 
+// ── Palette definitions ──────────────────────────────────────────────────────
 const PALETTES = {
   neon: {
     id: "neon", name: "Neon Gamer", emoji: "🎮", description: "Sleek gaming UI",
@@ -45,7 +45,7 @@ function rgba(hex, alpha) {
   return `rgba(${r},${g},${b},${alpha})`;
 }
 
-// Palette Picker 
+// ── Palette Picker ───────────────────────────────────────────────────────────
 function PalettePicker({ onPick }) {
   const [hovered, setHovered] = useState(null);
   return (
@@ -87,12 +87,18 @@ function PalettePicker({ onPick }) {
             );
           })}
         </div>
+
+        {/* Copyright */}
+        <p style={{ fontSize:"0.6rem", letterSpacing:"0.1em", color:"rgba(255,255,255,0.2)", textAlign:"center" }}>
+          © 2026 Joanne Costo. All Rights Reserved.
+        </p>
+
       </div>
     </div>
   );
 }
 
-// Main Game 
+// ── Main Game ────────────────────────────────────────────────────────────────
 export default function TicTacToe({ onBack }) {
   const [paletteId,   setPaletteId]   = useState(null);
   const [committed,   setCommitted]   = useState(Array(9).fill(null));
@@ -128,6 +134,7 @@ export default function TicTacToe({ onBack }) {
     if (dragSrc === targetIdx) { setDragOver(null); setDragSrc(null); return; }
     const next = [...working];
     if (dragSrc === "tray") {
+      if (hasMoved) { flashError("Only one new piece per turn!"); setDragSrc(null); setDragOver(null); return; }
       if (next[targetIdx]) { flashError("Cell is occupied!"); setDragSrc(null); setDragOver(null); return; }
       next[targetIdx] = current;
     } else {
@@ -142,6 +149,7 @@ export default function TicTacToe({ onBack }) {
 
   const handleClick = (idx) => {
     if (isDone || working[idx]) return;
+    if (hasMoved) { flashError("Only one new piece per turn!"); return; }
     const next = [...working]; next[idx] = current;
     setWorking(next); setTouchedCell(idx); setHasMoved(true);
   };
@@ -320,6 +328,11 @@ export default function TicTacToe({ onBack }) {
           <button onClick={reset} style={borderBtn}>↺ Rematch</button>
           <button onClick={resetAll} style={{ ...borderBtn, borderColor:rgba("#EF4444",0.3), color:rgba("#EF4444",0.6) }}>✕ Reset All</button>
         </div>
+
+        {/* Copyright */}
+        <p style={{ fontSize:"0.6rem", letterSpacing:"0.1em", color:rgba(pal.textPrimary,0.25), textAlign:"center", flexShrink:0 }}>
+          © 2026 Joanne Costo. All Rights Reserved.
+        </p>
 
       </div>
 
