@@ -8,7 +8,7 @@ export default function App() {
   if (mode === "classic") return <ClassicGame onBack={() => setMode(null)} />;
   if (mode === "teen")    return <TicTacToe   onBack={() => setMode(null)} />;
 
-  // ── Landing / mode selector ──────────────────────────────────────────────
+  // Landing / mode selector 
   return (
     <div className="min-h-screen w-full bg-gray-950 flex flex-col items-center justify-center p-6 relative overflow-hidden">
 
