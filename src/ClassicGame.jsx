@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-// ── Theme definitions ────────────────────────────────────────────────────────
+// Theme Definitions 
 const THEMES = {
   dark: {
     id: "dark",
@@ -68,7 +68,7 @@ const THEMES = {
   },
 };
 
-// ── Theme Picker ─────────────────────────────────────────────────────────────
+// Theme Picker 
 function ThemePicker({ onPick }) {
   const [hovered, setHovered] = useState(null);
 
@@ -144,7 +144,7 @@ function ThemePicker({ onPick }) {
   );
 }
 
-// ── Square ───────────────────────────────────────────────────────────────────
+// Square Tiles
 function Square({ value, onSquareClick, isWin, theme: t }) {
   let cls = "aspect-square rounded-2xl flex items-center justify-center text-4xl sm:text-5xl font-black border-2 transition-all duration-150 select-none cursor-pointer ";
 
@@ -155,7 +155,7 @@ function Square({ value, onSquareClick, isWin, theme: t }) {
   return <button className={cls} onClick={onSquareClick}>{value}</button>;
 }
 
-// ── Board ────────────────────────────────────────────────────────────────────
+// Game Board 
 function Board({ xIsNext, squares, onPlay, theme: t }) {
   const result  = calculateWinner(squares);
   const winLine = result?.line ?? [];
@@ -216,7 +216,7 @@ function calculateWinner(squares) {
   return null;
 }
 
-// ── Main ─────────────────────────────────────────────────────────────────────
+// Main 
 export default function ClassicGame({ onBack }) {
   const [themeId,     setThemeId]     = useState(null);
   const [history,     setHistory]     = useState([Array(9).fill(null)]);
