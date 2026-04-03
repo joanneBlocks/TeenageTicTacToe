@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-// Theme Definitions 
+// ── Theme definitions ────────────────────────────────────────────────────────
 const THEMES = {
   dark: {
     id: "dark",
@@ -68,7 +68,7 @@ const THEMES = {
   },
 };
 
-// Theme Picker 
+// ── Theme Picker ─────────────────────────────────────────────────────────────
 function ThemePicker({ onPick }) {
   const [hovered, setHovered] = useState(null);
 
@@ -139,12 +139,18 @@ function ThemePicker({ onPick }) {
             );
           })}
         </div>
+
+        {/* Copyright */}
+        <p className="text-[10px] tracking-wider text-center text-gray-400">
+          © 2026 Joanne Costo. All Rights Reserved.
+        </p>
+
       </div>
     </div>
   );
 }
 
-// Square Tiles
+// ── Square ───────────────────────────────────────────────────────────────────
 function Square({ value, onSquareClick, isWin, theme: t }) {
   let cls = "aspect-square rounded-2xl flex items-center justify-center text-4xl sm:text-5xl font-black border-2 transition-all duration-150 select-none cursor-pointer ";
 
@@ -155,7 +161,7 @@ function Square({ value, onSquareClick, isWin, theme: t }) {
   return <button className={cls} onClick={onSquareClick}>{value}</button>;
 }
 
-// Game Board 
+// ── Board ────────────────────────────────────────────────────────────────────
 function Board({ xIsNext, squares, onPlay, theme: t }) {
   const result  = calculateWinner(squares);
   const winLine = result?.line ?? [];
@@ -216,7 +222,7 @@ function calculateWinner(squares) {
   return null;
 }
 
-// Main 
+// ── Main ─────────────────────────────────────────────────────────────────────
 export default function ClassicGame({ onBack }) {
   const [themeId,     setThemeId]     = useState(null);
   const [history,     setHistory]     = useState([Array(9).fill(null)]);
@@ -317,6 +323,11 @@ export default function ClassicGame({ onBack }) {
             </div>
           </div>
         )}
+
+        {/* Copyright */}
+        <p className={`text-[10px] tracking-wider text-center shrink-0 ${t.textFaint}`}>
+          © 2026 Joanne Costo. All Rights Reserved.
+        </p>
 
       </div>
     </div>
