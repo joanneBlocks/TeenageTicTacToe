@@ -8,15 +8,11 @@ export default function App() {
   if (mode === "classic") return <ClassicGame onBack={() => setMode(null)} />;
   if (mode === "teen")    return <TicTacToe   onBack={() => setMode(null)} />;
 
-  // Landing / mode selector 
+  // ── Landing / mode selector ──────────────────────────────────────────────
   return (
-    <div className="min-h-screen w-full bg-gray-950 flex flex-col items-center justify-center p-6 relative overflow-hidden">
+    <div className="min-h-screen w-full bg-gray-950 flex flex-col items-center justify-center p-6 overflow-hidden">
 
-      {/* subtle grid bg */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{ backgroundImage:"linear-gradient(white 1px,transparent 1px),linear-gradient(90deg,white 1px,transparent 1px)", backgroundSize:"44px 44px" }} />
-
-      <div className="relative z-10 flex flex-col items-center gap-10 w-full max-w-xl">
+      <div className="flex flex-col items-center gap-10 w-full max-w-xl">
 
         {/* Title */}
         <div className="text-center space-y-3">
