@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 
-// ── Palette definitions ──────────────────────────────────────────────────────
+// Palette definitions 
 const PALETTES = {
   neon: {
     id: "neon", name: "Neon Gamer", emoji: "🎮", description: "Sleek gaming UI",
@@ -45,7 +45,7 @@ function rgba(hex, alpha) {
   return `rgba(${r},${g},${b},${alpha})`;
 }
 
-// ── Palette Picker ───────────────────────────────────────────────────────────
+// Palette Picker 
 function PalettePicker({ onPick }) {
   const [hovered, setHovered] = useState(null);
   return (
@@ -92,7 +92,7 @@ function PalettePicker({ onPick }) {
   );
 }
 
-// ── Main Game ────────────────────────────────────────────────────────────────
+// Main Game 
 export default function TicTacToe({ onBack }) {
   const [paletteId,   setPaletteId]   = useState(null);
   const [committed,   setCommitted]   = useState(Array(9).fill(null));
